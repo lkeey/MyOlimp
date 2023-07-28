@@ -19,7 +19,8 @@
             android:exported="false" />
         <activity
             android:name=".feature_onborading.activities.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

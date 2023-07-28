@@ -5,7 +5,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,7 +14,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.developement.myolimp.R
-import com.developement.myolimp.feature_onborading.activities.MainActivity
 import com.developement.myolimp.feature_onborading.activities.OnBoardingActivity
 import kotlinx.coroutines.delay
 
@@ -33,6 +31,7 @@ fun SplashScreen() {
         After delay launch MainActivity
     */
         context.startActivity(intent)
+
     }
     
     Column(

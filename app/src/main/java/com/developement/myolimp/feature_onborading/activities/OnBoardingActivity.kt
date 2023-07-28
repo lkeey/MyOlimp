@@ -1,24 +1,29 @@
 package com.developement.myolimp.feature_onborading.activities
 
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import com.developement.myolimp.R
 import com.developement.myolimp.feature_onborading.models.FragmentImg
 import com.developement.myolimp.feature_onborading.screens.OnBoardingScreen
 import com.developement.myolimp.feature_onborading.view_models.OnBoardingViewModel
+import com.developement.myolimp.ui.theme.BlueStart
 import com.developement.myolimp.ui.theme.MyOlimpTheme
+import com.developement.myolimp.ui.theme.Transparent
+import com.developement.myolimp.ui.theme.White
 
 class OnBoardingActivity : ComponentActivity() {
 
     private val viewModel: OnBoardingViewModel by viewModels()
 
-    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.statusBarColor = Transparent.toArgb()
+        window.navigationBarColor = White.toArgb()
 
     /*
         Add all images and text
@@ -26,9 +31,7 @@ class OnBoardingActivity : ComponentActivity() {
         addFragments()
 
         setContent {
-            MyOlimpTheme {
-                OnBoardingScreen(viewModel = viewModel)
-            }
+            OnBoardingScreen(viewModel = viewModel)
         }
     }
 
