@@ -16,18 +16,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.developement.myolimp.R
 import com.developement.myolimp.feature_onborading.activities.MainActivity
+import com.developement.myolimp.feature_onborading.activities.OnBoardingActivity
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen() {
 
     val context = LocalContext.current
-    val intent = Intent(context, MainActivity::class.java)
+    val intent = Intent(context, OnBoardingActivity::class.java)
 
     LaunchedEffect(
         key1 = true
     ) {
-        delay(3000L)
+        delay(1500L)
     /*
         After delay launch MainActivity
     */
