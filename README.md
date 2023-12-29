@@ -1,7 +1,7 @@
-<img src="https://raw.githubusercontent.com/RambleTOT/MyOlimp/main/app/src/main/res/drawable/icon.png" width="336" align="right" hspace="20">
+<img src="https://github.com/lkeey/MyOlimp/blob/main/app/src/main/res/drawable/icon.png" width="336" align="right" hspace="20">
 
-# My-Olimp
+# MyOlimp :fire:
 
-[![CodeFactor](https://www.codefactor.io/repository/github/my-olimp/mobile/badge)](https://www.codefactor.io/repository/github/my-olimp/mobile)
+[![CodeFactor](https://www.codefactor.io/repository/github/lkeey/myolimp/badge)](https://www.codefactor.io/repository/github/lkeey/myolimp)
 
-App for scientific Olympiads
+App for scientific olympiads
