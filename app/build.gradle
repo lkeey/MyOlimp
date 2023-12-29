@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
 }
 
 android {
-    namespace 'com.developement.myolimp'
-    compileSdk 33
+    namespace 'ramble.sokol.myolimp'
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.developement.myolimp"
-        minSdk 24
-        targetSdk 33
+        applicationId "ramble.sokol.myolimp"
+        minSdk 26
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -20,6 +21,18 @@ android {
         }
     }
 
+    applicationVariants.configureEach { variant ->
+        kotlin.sourceSets {
+            getByName(variant.name) {
+                kotlin.srcDir("build/generated/ksp/${variant.name}/kotlin")
+            }
+        }
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,17 +40,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
+        kotlinCompilerExtensionVersion '1.5.1'
     }
     packagingOptions {
         resources {
@@ -48,26 +61,82 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.5.1'
-    implementation platform('androidx.compose:compose-bom:2022.10.00')
-    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation('androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2')
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    implementation platform('androidx.compose:compose-bom:2023.09.02')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    implementation 'androidx.compose.ui:ui:1.5.2'
     implementation 'androidx.compose.ui:ui-graphics'
     implementation 'androidx.compose.ui:ui-tooling-preview'
-    implementation 'androidx.compose.material3:material3'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.compose.material3:material3:1.1.2'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.compose.material:material:1.5.2'
+
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+    androidTestImplementation platform('androidx.compose:compose-bom:2023.09.02')
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
     // for pager
-    implementation 'androidx.compose.foundation:foundation:1.4.1'
+    implementation "androidx.compose.foundation:foundation:$pager_version"
+
+    // DI koin
+    implementation "io.insert-koin:koin-androidx-compose:$koin_compose_version"
+
+    // system bar color
+    implementation "com.google.accompanist:accompanist-systemuicontroller:$ui_controller"
+    implementation "com.google.accompanist:accompanist-navigation-material:$ui_controller"
+
+    // compose destinations
+    implementation("io.github.raamcosta.compose-destinations:core:$compose_destinations")
+    ksp("io.github.raamcosta.compose-destinations:ksp:$compose_destinations")
+
+    // navigation
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    // to load images & svg
+    implementation("io.coil-kt:coil-compose:$coil_version")
+    implementation("io.coil-kt:coil-svg:$coil_version")
+
+    // to use constraints
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+    // material 3 calendar
+    implementation "com.maxkeppeler.sheets-compose-dialogs:core:1.0.2"
+
+    implementation "com.maxkeppeler.sheets-compose-dialogs:calendar:1.0.2"
+
+    // room
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
+
+    // swipable content
+//    implementation "me.saket.swipe:swipe:1.0.0"
+
+    // Data Store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // for work with time
+    implementation('org.jetbrains.kotlinx:kotlinx-datetime:0.4.1')
+
+    // Retrofit & GSON
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+
+    // Mark Down Converter
+    implementation 'com.github.jeziellago:compose-markdown:0.3.6'
+
+    // Instabug
+    implementation 'com.instabug.library:instabug:12.1.0'
 }

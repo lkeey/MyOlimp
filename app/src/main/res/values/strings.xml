@@ -4,10 +4,226 @@
     <string name="skip">Пропустить</string>
     <string name="text_title_1_onboarding">Регистрируйтесь на олимпиады одним кликом</string>
     <string name="text_content_1_onboarding">Теперь не нужно вводить одни и те же данные на разных сайтах</string>
-    <string name="text_title_2_onboarding">Готовьтесь к олимпиадам с помощью Библиотеки</string>
+    <string name="text_title_2_onboarding">Готовьтесь к олимпиадам с помощью библиотеки</string>
     <string name="text_content_2_onboarding">Все необходимое для подготовки на максимальное количество баллов</string>
-    <string name="text_title_3_onboarding">Сохраняйте все нужные даты и ссылки в Календаре</string>
+    <string name="text_title_3_onboarding">Сохраняйте все нужные даты и ссылки в календаре</string>
     <string name="text_content_3_onboarding">Уведомления точно не дадут вам забыть про вебинары и олимпиады</string>
     <string name="text_title_4_onboarding">Следите за всеми новостями мира олимпиад</string>
     <string name="text_content_4_onboarding">В новостной ленте вы найдете только самое актуальное и интересное</string>
+    <string name="last_step">Последний штрих</string>
+    <string name="choose_option_authentication">Войдите или зарегистрируйтесь, чтобы получить доступ ко всем функциям</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="login">Войти</string>
+    <string name="nav_home_name">Главная</string>
+    <string name="nav_calendar_name">Календарь</string>
+    <string name="nav_library_name">Библиотека</string>
+    <string name="nav_news_name">Новости</string>
+    <string name="nav_profile_name">Профиль</string>
+    <string name="profile_data">Данные</string>
+    <string name="profile_data_content">Для регистрации на олимпиады</string>
+    <string name="profile_purpose">Цели</string>
+    <string name="profile_purpose_content">Чтобы не забыть про победы</string>
+    <string name="profile_progress">Успеваемость</string>
+    <string name="profile_progress_content">Группы и статистика подготовки</string>
+    <string name="profile_favourite">Избранное</string>
+    <string name="profile_favourite_content">Для любимых статей и олимпиад</string>
+    <string name="profile_watch">Хочу посмотреть</string>
+    <string name="profile_watch_content">Чтобы ничего не потерять</string>
+    <string name="profile_result">Результаты</string>
+    <string name="profile_result_content">Статусы, дипломы и баллы</string>
+    <string name="profile_logout">Выйти из аккаунта</string>
+    <string name="profile_logout_content">Уверены?</string>
+    <string name="edit">Изменить</string>
+    <string name="delete">Удалить</string>
+    <string name="achivement">Достижения</string>
+    <string name="personal_data">Личная информация</string>
+    <string name="education">Образование</string>
+    <string name="contacts">Контакты</string>
+    <string name="with_out_achivement">Достижений нет</string>
+    <string name="id">ID</string>
+    <string name="name_surname">ФИО</string>
+    <string name="gender">Пол</string>
+    <string name="snils">СНИЛС</string>
+    <string name="region">Регион</string>
+    <string name="city">Город</string>
+    <string name="grade">Класс</string>
+    <string name="school">Учебное заведение</string>
+    <string name="email">Почта</string>
+    <string name="phone_number">Телефон</string>
+    <string name="profile_image">Аватарка</string>
+    <string name="personal_info">Личные данные</string>
+    <string name="choose_photo">Выбрать фото</string>
+    <string name="save">Сохранить</string>
+    <string name="update">Обновить</string>
+    <string name="name">Имя</string>
+    <string name="third_name">Отчество</string>
+    <string name="dob">Дата рождения</string>
+    <string name="second_name">Фамилия</string>
+    <string name="star">*</string>
+    <string name="no_third_name">Нет отчества</string>
+    <string name="login_to_service">Войти в сервис:</string>
+    <string name="region_profile">Субъект</string>
+    <string name="city_profile">Населенный пункт</string>
+    <string name="create_plan">Создайте план :)</string>
+    <string name="update_plan">Обновите план :)</string>
+    <string name="name_plan">Название</string>
+    <string name="event">Событие</string>
+    <string name="task">Задача</string>
+    <string name="data_plan">Дата</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтверждение пароля</string>
+    <string name="subject">Предмет</string>
+    <string name="name_error">Название некорректно</string>
+    <string name="data_error">Дата некорректна</string>
+    <string name="color_error">Цвет не выбран</string>
+    <string name="subject_error">Предмет не выбран</string>
+    <string name="time_error">Время начала и конца некорректно</string>
+    <string name="pick_date">Выберите дату</string>
+    <string name="today_plan">План на сегодня</string>
+    <string name="first_step">С чего начать?</string>
+    <string name="probnik">Пробник</string>
+    <string name="test">Тест</string>
+    <string name="math">Математика</string>
+    <string name="trial_version">Пробный вариант</string>
+    <string name="no_favourites">Здесь пока пусто :(</string>
+    <string name="previous_events">Прошедшие события</string>
+    <string name="next_events">Предстоящие события</string>
+    <string name="current_events">Текущие события</string>
+    <string name="no_plans">Планов нет...</string>
+    <string name="nothing_was_found">По запросу \'%1$s\' ничего не найдено</string>
+    <string name="search">Найти</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="email_error_msg">Почта указана некорректно</string>
+    <string name="email_error_already_in_use">Аккаунт с такой почтой уже зарегистрирован</string>
+    <string name="error_password_msg">Неверный пароль, повторите попытку</string>
+    <string name="poilitics">Регистрируясь, вы соглашаетесь на обработку персональных данных и получение информационных сообщений от группы компании MyOlimp</string>
+    <string name="already_registered">Уже регистрировались в сервисах MyOlimp?</string>
+    <string name="login_to_account">Войдите в учетную запись</string>
+    <string name="register_account">Зарегистрировать учетную запись</string>
+    <string name="not_registered">Еще не регистрировались в сервисах MyOlimp?</string>
+    <string name="success_autherization_message">Авторизация прошла успешно )</string>
+    <string name="register_auth_error_message">К сожалению, бэкендреры накосячили...</string>
+    <string name="success_send_code_message">Код успешно отправлен )</string>
+    <string name="email_confirmation">Подтверждение почты:</string>
+    <string name="email_description">На почту %1$s был отправлен код,  введите его для завершения регистрации</string>
+    <string name="choose_time">Выберите время начала и конца</string>
+    <string name="success_register_message">Аккаунт был создан</string>
+    <string name="error_register_message">Неверный код, попробуйте еще раз</string>
+    <string name="individual_data">Персональные данные</string>
+    <string name="subjects">Дисциплины</string>
+    <string name="one_of_four">1 из 4</string>
+    <string name="two_of_four">2 из 4</string>
+    <string name="three_of_four">3 из 4</string>
+    <string name="female_gender">Женский</string>
+    <string name="male_gender">Мужской</string>
+    <string name="type_of_activity">Вид деятельности</string>
+    <string name="further">Дальше</string>
+
+    <string-array name="genders">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+
+    <string-array name="activity_type">
+        <item>Ученик</item>
+        <item>Тренер/учитель</item>
+        <item>Сотрудник школы</item>
+        <item>Сотрудник вуза</item>
+        <item>Член комитета олимпиад</item>
+        <item>Работодатель</item>
+    </string-array>
+    <string name="fio_error">Неправильно ввели ФИО</string>
+    <string-array name="region">
+        <item>Московская область</item>
+        <item>Москва</item>
+        <item>Санкт-петербург</item>
+        <item>Краснодарский край</item>
+        <item>Свердловская область</item>
+        <item>Ростовская область</item>
+    </string-array>
+    <string-array name="city">
+        <item>Апрелевка</item>
+        <item>Балашиха</item>
+        <item>Белоозерский</item>
+        <item>Бронницы</item>
+        <item>Верея</item>
+        <item>Видное</item>
+    </string-array>
+    <string-array name="school">
+        <item>МБОУ СОШ №1</item>
+        <item>МБОУ гимназия №2</item>
+        <item>МБОУ СОШ №3</item>
+        <item>МБОУ лицей №4</item>
+        <item>МБОУ СОШ №6</item>
+        <item>МБОУ гимназия №7</item>
+    </string-array>
+    <string-array name="grade">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string name="null_textfield_error">Необходимо ввести %1$s</string>
+    <string name="error_date">дату рождения</string>
+    <string name="register_image_screen_title">Фото и документ</string>
+    <string name="four_of_four">4 из 4</string>
+    <string name="label_snils">СНИЛС</string>
+    <string name="choose_necessary_subjects">Выберите или введите в поиск предметы, к которым готовитесь</string>
+    <string name="popular_subjects">Популярные дисциплины</string>
+    <string name="no_subjects_found">Предмет не найден :(</string>
+    <string name="answer">Ответить</string>
+    <string name="article_author">Автор: %1$s %2$s %3$s</string>
+    <string name="article_task_number">Задание %1$d</string>
+    <string name="article_answer_type_float">Число или дробь</string>
+    <string name="article_question_error">Неверно, попробуйте снова</string>
+    <string name="article_question_show_answer">Показать решение</string>
+    <string name="article_question_solution">Решение</string>
+    <string name="null_snils_error_text">Необходимо ввести снилс</string>
+    <string name="library_articles_title">Статьи</string>
+    <string name="learn_more">Подробнее</string>
+    <string name="button_show_text">Показать</string>
+    <string name="man_gender">Мужской</string>
+    <string name="women_gender">Женский</string>
+    <string name="surname_error">Фамилию</string>
+    <string name="dob_error">Дату рождения</string>
+    <string name="email_error">Почту</string>
+    <string name="don_t_have_plans">У вас еще нет планов</string>
+    <string name="pass_email_to_restore_password">Введите почту, для которой вы хотите восстановить доступ</string>
+    <string name="check_email_code_send">Проверьте свою почту.\nМы отправили вам ссылку для восстановления пароля</string>
+    <string name="check_email_registraion_end_code_send">Проверьте свою почту.\nМы отправили вам ссылку для завершения регистрации</string>
+    <string name="resend_code_again_disabled">Отправить код повторно %1$s</string>
+    <string name="no_loved_yet">Пока что вы ничего не сохранили</string>
+    <string name="resend_code_again">Отправить код повторно</string>
+    <string name="something_wrong">Что-то не так</string>
+    <string name="check_your_connection">Кажется, нет интернета. Проверьте сеть и перезагрузите приложение</string>
+    <string name="reload">Перезагрузить</string>
+    <string name="have_no_loved_articles">У тебя нет любимых статей</string>
+    <string name="have_no_loved_articles_with_filter">У тебя нет любимых статей по этим предметам</string>
+    <string name="error_password_letters">Пароль должен состоять только из букв латиницы верхнего или нижнего регистра, цифр, специальных символов(!@$%^)</string>
+    <string name="error_password_spaces">Пароль не может содержать в себе пробелы</string>
+    <string name="student">Ученик</string>
+    <string name="teacher">Учитель</string>
+    <string name="profile_section_olympiads">Олимпиады</string>
+    <string name="profile_section_olympiads_content">Для загрузки результатов</string>
+    <string name="profile_section_news">Мои новости и статьи</string>
+    <string name="profile_section_news_content">Чтобы рассказать о важном</string>
+    <string name="work">Работа</string>
+    <string name="work_post">Должность</string>
+    <string-array name="work_array">
+        <item>Ректор</item>
+        <item>Проректор</item>
+        <item>Декан</item>
+        <item>Заведующий кафедрой</item>
+        <item>Профессор</item>
+        <item>Доцент</item>
+        <item>Старший преподаватель</item>
+    </string-array>
 </resources>
