@@ -1,6 +1,7 @@
 package ramble.sokol.myolimp.feature_library.domain.view_models
 
 import android.content.Context
+import android.nfc.Tag
 import android.os.CountDownTimer
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -10,6 +11,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ramble.sokol.myolimp.feature_library.data.repository.LibraryRepositoryImpl
+import ramble.sokol.myolimp.feature_library.domain.models.ArticleModel
+import ramble.sokol.myolimp.feature_library.domain.models.BlockModel
+import ramble.sokol.myolimp.feature_library.domain.models.QuestionModel
 import ramble.sokol.myolimp.feature_library.presenation.mainScreen.LibraryEvent
 import ramble.sokol.myolimp.feature_library.presenation.mainScreen.LibraryState
 import ramble.sokol.myolimp.feature_profile.database.UserDatabase
@@ -115,30 +119,64 @@ class LibraryViewModel(context: Context) : ViewModel() {
         }
 
         viewModelScope.launch {
-            libraryRepository.getArticles(
-                page = state.value.currentPage,
-                isShowFavourites = state.value.isShowingFavourites,
-                query = state.value.searchQuery,
-                onSuccess = { articles->
-                    _state.update {
-                        it.copy(
-                            isLoading = false,
-                            articles = articles
-                        )
-                    }
-                },
-                onError = { error->
+//            libraryRepository.getArticles(
+//                page = state.value.currentPage,
+//                isShowFavourites = state.value.isShowingFavourites,
+//                query = state.value.searchQuery,
+//                onSuccess = { articles->
+//                    _state.update {
+//                        it.copy(
+//                            isLoading = false,
+//                            articles = articles
+//                        )
+//                    }
+//                },
+//                onError = { error->
+//
+//                    Log.i(TAG, "error occurred - $error")
+//
+//                    _state.update {
+//                        it.copy(
+//                            isLoading = false,
+//                            isError = true
+//                        )
+//                    }
+//                }
+//            )
 
-                    Log.i(TAG, "error occurred - $error")
-
-                    _state.update {
-                        it.copy(
-                            isLoading = false,
-                            isError = true
+            _state.update {
+                it.copy(
+                    isLoading = false,
+                    articles = listOf(
+                        ArticleModel(
+                            id = 1,
+                            title = "Современная литература",
+                            tags = listOf("Литература", "МХК"),
+                            subject = "Литература",
+                            image = "https://blog.skillfactory.ru/wp-content/uploads/2023/02/kotlin-chto-eto-za-yazyk-gde-i-kak-ispolzuetsya.jpg",
+                            isFavourite = false,
+                            blocks = listOf(
+                                BlockModel(
+                                    id = 1,
+                                    blockText = "Kotlin — это язык программирования, созданный компанией JetBrains. С момента выхода первой официальной версии языка в 2016 году, всего за год он занял место в топ-50 в рейтинге TIOBE (индекс, оценивающий популярность языков программирования на основе подсчета результатов поисковых запросов, содержащих название языка) и не сдает позиций.Kotlin — это статически типизированный язык программирования (тип переменной известен во время компиляции, то есть еще до запуска программы).\n" +
+                                            "\n" +
+                                            "В отличие от Java, где программы строятся на классах, основным строительным блоком программы на Kotlin является функция. Однако Kotlin также поддерживает объектно-ориентированный подход к программированию.",
+                                    sequenceNumber = 1,
+                                    type = "t",
+                                    isDifficult = false,
+                                    questions = listOf(
+                                        QuestionModel(
+                                            id = 1,
+                                            questionText = "Kotlin?",
+                                            answer = "Kotlin"
+                                        )
+                                    )
+                                )
+                            )
                         )
-                    }
-                }
-            )
+                    )
+                )
+            }
         }
     }
 }
