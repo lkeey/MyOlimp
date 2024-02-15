@@ -16,7 +16,10 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import ramble.sokol.myolimp.NavGraphs
 import ramble.sokol.myolimp.destinations.HomeScreenDestination
+import ramble.sokol.myolimp.feature_authentication.data.models.City
+import ramble.sokol.myolimp.feature_authentication.data.models.Region
 import ramble.sokol.myolimp.feature_authentication.data.models.RequestLoginModel
+import ramble.sokol.myolimp.feature_authentication.data.models.School
 import ramble.sokol.myolimp.feature_authentication.domain.events.LoginEvent
 import ramble.sokol.myolimp.feature_authentication.domain.repositories.CodeDataStore
 import ramble.sokol.myolimp.feature_authentication.domain.repositories.LoginRepository
@@ -112,57 +115,86 @@ class LoginViewModel : ViewModel(), KoinComponent {
         }
 
         if(isDataValid()) {
-            viewModelScope.launch {
-                try {
-                    repository.login(
-                        RequestLoginModel(
-                            email = _state.value.email,
-                            password = _state.value.password,
-                        ),
-                        onResult = {
+//            viewModelScope.launch {
+//                try {
+//                    repository.login(
+//                        RequestLoginModel(
+//                            email = _state.value.email,
+//                            password = _state.value.password,
+//                        ),
+//                        onResult = {
+//
+//                            // all correct
+//                            if (it?.code != null) {
+//
+//                                // save token in data store
+//                                saveData(
+//                                    it.code,
+//                                    it.user
+//                                )
+//
+//                                // navigate to main screen
+//                                onSuccess()
+//
+//                            // invalid data
+//                            } else {
+//
+//                                Log.i(TAG, "Error getting code")
+//
+//                                onError()
+//                            }
+//                        },
+//                        onError = {
+//                            // can not get data
+//
+//                            Log.i(TAG, "Error sending request - $it")
+//
+//                            onError()
+//                        }
+//                    )
+//
+//                } catch (ex: Exception) {
+//                    // if user not found
+//
+//                    Log.i(TAG, "exception - ${ex.message}")
+//
+//                    _state.update {
+//                        it.copy(
+//                            isError = true
+//                        )
+//                    }
+//
+//                }
+//            }
 
-                            // all correct
-                            if (it?.code != null) {
-
-                                // save token in data store
-                                saveData(
-                                    it.code,
-                                    it.user
-                                )
-
-                                // navigate to main screen
-                                onSuccess()
-
-                            // invalid data
-                            } else {
-
-                                Log.i(TAG, "Error getting code")
-
-                                onError()
-                            }
-                        },
-                        onError = {
-                            // can not get data
-
-                            Log.i(TAG, "Error sending request - $it")
-
-                            onError()
-                        }
+//            TODO TESTING
+            if (state.value.password == "akir" && state.value.email == "kir@mail.ru") {
+                // save token in data store
+                saveData(
+                    "",
+                    LocalUserModel(
+                        id = "1010101",
+                        firstName = "Aleksey",
+                        secondName = "Kiryushin",
+                        thirdName = "Aleksandrovich",
+                        dateOfBirth = "14.06.2007",
+                        gender = "m",
+                        snils = "19750386",
+                        phone = "79999999",
+                        email = "kir@mail.ru",
+                        grade = 10,
+                        accountType = "s",
+                        subjects = listOf("Литература", "Информатика"),
+                        region = Region(12, "Москвоская область"),
+                        city = City(1, "Чехов", 12),
+                        school = School(1, "МБОУ СОШ № 35", 12),
                     )
+                )
 
-                } catch (ex: Exception) {
-                    // if user not found
-
-                    Log.i(TAG, "exception - ${ex.message}")
-
-                    _state.update {
-                        it.copy(
-                            isError = true
-                        )
-                    }
-
-                }
+                // navigate to main screen
+                onSuccess()
             }
+        //            TODO END TESTING
         }
     }
 

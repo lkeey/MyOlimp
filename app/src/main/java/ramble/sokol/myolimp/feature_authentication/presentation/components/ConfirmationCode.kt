@@ -1,6 +1,5 @@
 package ramble.sokol.myolimp.feature_authentication.presentation.components
 
-import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
